@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Home.scss';
+import PawLogo from '../../images/favicon-32x32.png';
 
 class Home extends Component {
 
@@ -21,6 +22,7 @@ class Home extends Component {
       <section>
         <div className="header-wrapper">
           <h2 className="home-h2">Fido's Home</h2>
+          <img src={PawLogo} alt='paw print' className='paw-logo' />
         </div>
       </section>
     );
