@@ -2,5 +2,27 @@
   font-family: 'Libre Baskerville', serif;
   font-weight: bold;
   font-size: 40px;
-  color: rgb(240, 238, 238);
+  color: rgb(240, 238, 238,);
+}
+
+#welcome-1 {
+  animation: fadeIn 3s linear;
+}
+
+#welcome-2 {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
