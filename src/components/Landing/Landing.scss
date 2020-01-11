@@ -14,14 +14,14 @@
 }
 
 #welcome-1 {
-  animation: fadeIn 3s linear;
+  animation: fadeIn 2.5s linear;
 }
 
 #welcome-2 {
   opacity: 0;
   animation-name: fadeIn;
-  animation-duration: 3s;
-  animation-delay: 4s;
+  animation-duration: 2.5s;
+  animation-delay: 3s;
   animation-fill-mode: forwards;
 }
 
