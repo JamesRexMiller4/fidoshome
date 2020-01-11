@@ -1,10 +1,10 @@
 import React from 'react';
 import './Results.scss';
+import Card from '../Card/Card';
 
 const Results = () => {
   return ( 
-    <section>
-    <h2>Results</h2>
+    <section className='results-section'>
     </section>
   );
 }

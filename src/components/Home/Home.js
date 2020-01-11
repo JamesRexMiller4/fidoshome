@@ -15,15 +15,18 @@ class Home extends Component {
       }
     })
     .then(res => res.json())
-    .then(data => sessionStorage.setItem('token', data.access_token))
+    .then(data => {
+      console.log(data)
+      sessionStorage.setItem('token', data.access_token)
+    })
     .catch(error => console.log(error))
   }
 
   render() { 
     return ( 
       <section className='home-section'>
-        <div className="header-wrapper">
-          <h2 className="home-h2">Fido's Home</h2>
+        <div className='header-wrapper'>
+          <h2 className='home-h2'>Fido's Home</h2>
           <img src={PawLogo} alt='paw print' className='paw-logo' />
         </div>
         <section className='form-results-section'>
