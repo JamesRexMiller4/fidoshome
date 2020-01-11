@@ -21,7 +21,7 @@
   opacity: 0;
   animation-name: fadeIn;
   animation-duration: 2.5s;
-  animation-delay: 3s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
 }
 
@@ -34,9 +34,10 @@
   color: rgb(205, 174, 2);
   border: 5px solid;
   border-color: rgb(205, 174, 2);
+  border-radius: 30px;
   cursor: pointer;
   animation-name: pulse;
-  animation-delay: 6s;
+  animation-delay: 4s;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
@@ -45,6 +46,8 @@
     opacity: 1;
     animation: none;
     font-size: 45px;
+    color: rgb(242, 212, 46);
+    border-color: rgb(242, 212, 46);
   }
 }
 
