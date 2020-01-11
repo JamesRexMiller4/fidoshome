@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Home.scss';
 import PawLogo from '../../images/favicon-32x32.png';
+import Form from '../Form/Form';
+import Results from '../Results/Results';
 
 class Home extends Component {
 
@@ -24,6 +26,10 @@ class Home extends Component {
           <h2 className="home-h2">Fido's Home</h2>
           <img src={PawLogo} alt='paw print' className='paw-logo' />
         </div>
+        <section>
+          <Form />
+          <Results />
+        </section>
       </section>
     );
   }
