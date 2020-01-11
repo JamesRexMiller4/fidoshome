@@ -5,6 +5,14 @@
   color: rgb(240, 238, 238,);
 }
 
+.welcome-section {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #welcome-1 {
   animation: fadeIn 3s linear;
 }
@@ -17,6 +25,29 @@
   animation-fill-mode: forwards;
 }
 
+.btn {
+  opacity: 0;
+  width: 15vw;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+  font-size: 40px;
+  color: rgb(205, 174, 2);
+  border: 3px solid;
+  border-color: rgb(205, 174, 2);
+  cursor: pointer;
+  animation-name: pulse;
+  animation-delay: 6s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+
+  &:hover {
+    opacity: 1;
+    animation: none;
+    font-size: 45px;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -24,5 +55,15 @@
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: .2
+  }
+
+  to {
+    opacity: 1
   }
 }
