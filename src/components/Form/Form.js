@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Form.scss';
+import { addAnimals } from '../../actions';
+import { connect } from 'react-redux';
 
 class Form extends Component {
   constructor(props) {
@@ -20,10 +22,7 @@ class Form extends Component {
       }
     })
     .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      this.setState({animals: data.animals})
-    })
+    .then(data => {this.props.addAnimals(data.animals)})
   }
 
   render() { 
@@ -42,4 +41,8 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export const mapDispatchToProps = dispatch => ({
+  addAnimals: animals => dispatch(addAnimals(animals))
+})
+
+export default connect(null, mapDispatchToProps)(Form);
