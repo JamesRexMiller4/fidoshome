@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
+import Header from '../Header/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Fidos Home</h2>
-      </header>
-    </div>
+    <main className="App">
+      <Header />
+    </main>
   );
 }
 
