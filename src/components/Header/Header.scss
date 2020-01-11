@@ -2,6 +2,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 40vh;
 }
 
 .header-h1 {
@@ -12,8 +13,8 @@ header {
 }
 
 .header-profile {
-  width: 15vw;
-  height: 30vh;
+  width: 15%;
+  height: 70%;
   border: 10px solid;
   border-color: rgb(205, 174, 2);
   border-radius: 50%;
