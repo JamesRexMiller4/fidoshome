@@ -21,7 +21,7 @@ class Home extends Component {
 
   render() { 
     return ( 
-      <section>
+      <section className='home-section'>
         <div className="header-wrapper">
           <h2 className="home-h2">Fido's Home</h2>
           <img src={PawLogo} alt='paw print' className='paw-logo' />

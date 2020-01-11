@@ -1,6 +1,8 @@
 .header-wrapper {
   display: flex;
   align-items: center;
+  border-bottom: 7px solid;
+  background-color: rgba(69, 15, 179, 0.844);
 }
 
 .home-h2 {
@@ -20,4 +22,5 @@
 
 .form-results-section{
   display: flex;
+  background-color: #957FEF;
 }
