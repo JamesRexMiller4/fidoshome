@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import Header from '../Header/Header';
+import Landing from '../Landing/Landing';
 
-function App() {
-  return (
-    <main className="App">
-      <Header />
-    </main>
-  );
+class App extends Component {
+
+  // componentDidMount() {
+  //   fetch()
+  // }
+
+  render() {
+    return (
+      <main className="App">
+        <Landing />
+      </main>
+    );
+  }
 }
 
 export default App;
