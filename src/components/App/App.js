@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Landing from '../Landing/Landing';
-
+import { Switch, Route } from 'react-router-dom';
 class App extends Component {
 
   // componentDidMount() {
@@ -11,7 +11,10 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <Landing />
+        <Switch>
+          <Route exact path='/' component={Landing} />
+
+        </Switch>
       </main>
     );
   }
