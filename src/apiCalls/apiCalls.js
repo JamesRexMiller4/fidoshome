@@ -11,4 +11,19 @@ export const fetchToken = () => {
         throw Error('Failed fetching token')
       } 
       return res.json()})
-}
+};
+
+export const fetchAnimals = (type, location, page) => {
+  return fetch('https://api.petfinder.com/v2/animals?' + location + '&status=adoptable&type=' + type + '&page=' + page, {
+      headers: {
+        'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
+        'Content-Type': 'application/json',
+        'Origin': 'localhost:3000/home'
+      }
+    })
+    .then(res => {
+      if(!res.ok) {
+        throw Error('Failed fetching animals')
+      }
+      return res.json()})
+};
