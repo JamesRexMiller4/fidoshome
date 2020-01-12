@@ -40,7 +40,7 @@ class Form extends Component {
       <form className='form'>
         <h2 className='form-h2'>Search</h2>
         <label for='type-input' className='label'>Type</label>
-        <select onClick={(e) => this.handleChange(e)} id='type-input' className='form-input' type='text' name='type' placeHolder='Dog'>
+        <select onChange={(e) => this.handleChange(e)} id='type-input' className='form-input' type='text' name='type' placeHolder='Dog'>
           <option name='type'>Dog</option>
           <option name='type'>Cat</option>
           <option name='type'>Rabbit</option>
