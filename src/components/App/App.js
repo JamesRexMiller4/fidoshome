@@ -11,7 +11,10 @@ const App = () => {
       <Switch>
         <Route exact path='/' component={Landing} />
         <Route path='/home' component={Home} />
-        <Route path='/:{id}' component={PetPage} />
+        <Route path='/:id' render={({ match }) => {
+          const { id } = match.params;
+          return <PetPage id={id} />
+        }} />
         <Redirect to='/home' />
       </Switch>
     </main>
