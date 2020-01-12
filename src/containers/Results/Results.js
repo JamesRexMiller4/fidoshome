@@ -1,6 +1,6 @@
 import React from 'react';
 import './Results.scss';
-import Card from '../Card/Card';
+import Card from '../../components/Card/Card';
 import { connect } from 'react-redux';
 import { addAnimals } from '../../actions/index';
 import NoPhoto from '../../images/No_picture_available.png';

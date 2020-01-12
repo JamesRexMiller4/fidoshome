@@ -39,4 +39,5 @@ const PetPage = ({ animals, id }) =>  {
 const mapStateToProps = state => ({
   animals: state.animals
 })
+
 export default connect(mapStateToProps)(PetPage);
