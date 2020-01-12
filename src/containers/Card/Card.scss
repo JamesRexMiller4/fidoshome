@@ -1,4 +1,20 @@
 .card-div {
   width: 90%;
-  height: 4vh;
+  height: 20vh;
+  margin: 20px;
+  margin-left: 47px;
+  background-color: #710628e2;
+  border: 2px solid;
+
+  display: flex;
+}
+
+.shelter-photo {
+  width: 20%;
+  height: 15vh;
+}
+
+.div-details{
+  display: flex;
+  flex-direction: column;
 }

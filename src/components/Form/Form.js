@@ -7,14 +7,24 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      city: '',
+      type: 'dog',
       state: '',
-      zipcode: null
+      zipcode: null,
+      miles: null
     }
+  }
+  
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value.toLowerCase()})
   }
 
   onSubmit = () => {
-    fetch('https://api.petfinder.com/v2/animals?organization=RI77&status=adoptable', {
+    let type = this.state.type
+    let state = this.state.state
+    let miles = this.state.miles
+
+    fetch('https://api.petfinder.com/v2/animals?' + 'location=' + state + '&status=adoptable' + '&type=' 
+    + type + '&distance=' + miles, {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
         'Content-Type': 'application/json',
@@ -29,12 +39,18 @@ class Form extends Component {
     return ( 
       <form className='form'>
         <h2 className='form-h2'>Search</h2>
-        <label for='city-input' className='label'>City</label>
-        <input id='city-input' className='form-input' type='text' name='city' placeHolder='Denver'></input>
+        <label for='type-input' className='label'>Type</label>
+        <select onClick={(e) => this.handleChange(e)} id='type-input' className='form-input' type='text' name='type' placeHolder='Dog'>
+          <option name='type'>Dog</option>
+          <option name='type'>Cat</option>
+          <option name='type'>Rabbit</option>
+        </select>
         <label for='state-input' className='label'>State</label>
-        <input id='state-input' className='form-input' type='text' name='state' placeHolder='CO'></input>
+        <input onChange={(e) => this.handleChange(e)} id='state-input' className='form-input' type='text' name='state' placeHolder='CO'></input>
         <label for='zipcode-input' className='label'>Zipcode</label>
-        <input id='zipcode-input' className='form-input' type='text' name='zipcode' placeHolder='80042'></input>
+        <input onChange={(e) => this.handleChange(e)} id='zipcode-input' className='form-input' type='text' name='zipcode' placeHolder='80042'></input>
+        <label for='miles-input' className='label'>Miles</label>
+        <input onChange={(e) => this.handleChange(e)} id='miles-input' className='form-input' type='number' name='miles' step='5'></input>
         <button onClick={this.onSubmit}type='button' className='form-btn'>Find Shelters</button>
       </form>
     );
