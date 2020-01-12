@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Component should match the snapshot 1`] = `
+<Link
+  className="link"
+  to="home/undefined"
+>
+  <div
+    className="card-div"
+  >
+    <img
+      alt="shelter"
+      className="shelter-photo"
+    />
+    <div
+      className="div-details-body"
+    >
+      <div
+        className="div-details"
+      >
+        <h3
+          className="pet-name-h3"
+        />
+        <div
+          className="pet-card-details-wrapper"
+        >
+          <h3
+            className="pet-age-h3"
+          />
+          <h3
+            className="pet-location-h3"
+          >
+            Location: 
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</Link>
+`;
