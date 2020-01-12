@@ -10,6 +10,7 @@ class Form extends Component {
       type: 'dog',
       state: '',
       zipcode: '',
+      page: 1
     }
   }
   
@@ -22,12 +23,13 @@ class Form extends Component {
     let state = this.state.state;
     let zip = this.state.zipcode;
     let location = 'location=';
+    let page = this.state.page;
 
     state.length > zip.length ? location = location + state
     : zip.length > state.length ? location = location + zip
     : location = ''
 
-    fetch('https://api.petfinder.com/v2/animals?' + location + '&status=adoptable' + '&type=' + type, {
+    fetch('https://api.petfinder.com/v2/animals?' + location + '&status=adoptable&type=' + type + '&page=' + page, {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
         'Content-Type': 'application/json',
@@ -52,7 +54,7 @@ class Form extends Component {
         <input onChange={(e) => this.handleChange(e)} id='state-input' className='form-input' type='text' name='state' placeHolder='CO'></input>
         <label for='zipcode-input' className='label'>Zipcode</label>
         <input onChange={(e) => this.handleChange(e)} id='zipcode-input' className='form-input' type='text' name='zipcode' placeHolder='80042'></input>
-        <button onClick={this.onSubmit}type='button' className='form-btn'>Find Shelters</button>
+        <button onClick={this.onSubmit}type='button' className='form-btn'>Find Pets</button>
       </form>
     );
   }
