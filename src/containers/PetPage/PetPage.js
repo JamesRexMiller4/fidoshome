@@ -29,6 +29,12 @@ class PetPage extends Component {
           <li className='li'>House Trained: <span className='span-pet-page'>{`${foundPet.attributes.spayed_neutered}`}</span></li>
           <li className='li'>Up-to-Date on Shots: <span className='span-pet-page'>{`${foundPet.attributes.shots_current}`}</span></li>
         </ul>
+        <ul className='ul'>
+          <p className='ul-p'>Contact:</p>
+          <li className='li'>Email: <span className='span-pet-page'>{foundPet.contact.email}</span></li>
+          <li className='li'>Phone: <span className='span-pet-page'>{foundPet.contact.phone}</span></li>
+          <li className='li'>Address: <span className='span-pet-page'>{`${foundPet.contact.address.address1} ${foundPet.contact.address.city}, ${foundPet.contact.address.state} ${foundPet.contact.address.postcode}`}</span></li>
+        </ul>
         </section>
         </section>
       </section>
