@@ -3,7 +3,7 @@ import './PetPage.scss';
 import Header from '../../components/Header/Header';
 import { connect } from 'react-redux';
 
-const PetPage = ({ animals, id }) =>  {
+export const PetPage = ({ animals, id }) =>  {
   const foundPet = animals.find(animal => animal.id === parseInt(id))
     return ( 
       <section>
@@ -21,7 +21,7 @@ const PetPage = ({ animals, id }) =>  {
         <ul className='ul'>
           <p className='ul-p'>Other Details:</p>
           <li className='li'>Spayed/Neutered: <span className='span-pet-page'>{`${foundPet.attributes.spayed_neutered}`}</span></li>
-          <li className='li'>House Trained: <span className='span-pet-page'>{`${foundPet.attributes.spayed_neutered}`}</span></li>
+          <li className='li'>House Trained: <span className='span-pet-page'>{`${foundPet.attributes.house_trained}`}</span></li>
           <li className='li'>Up-to-Date on Shots: <span className='span-pet-page'>{`${foundPet.attributes.shots_current}`}</span></li>
         </ul>
         <ul className='ul'>
@@ -36,7 +36,7 @@ const PetPage = ({ animals, id }) =>  {
     );
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   animals: state.animals
 })
 
