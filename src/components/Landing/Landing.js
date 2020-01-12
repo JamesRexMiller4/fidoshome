@@ -1,12 +1,16 @@
 import React from 'react';
 import './Landing.scss';
-import Header from '../Header/Header';
+import RegalPuppy from '../../images/regalpuppy.jpg';
 import { Link } from 'react-router-dom'; 
 
 const Landing = () => {
   return ( 
     <main>
-      <Header />
+      <header>
+        <h1 className='header-h1'>Fido's</h1>
+        <img src={RegalPuppy} alt='dog' className='header-profile'/>
+        <h1 className='header-h1'>Home</h1>
+      </header>
       <section className='welcome-section'>
         <h2 id='welcome-1' className='landing-welcome-h2'>Give your new best friend</h2>
         <Link to='/home'>
