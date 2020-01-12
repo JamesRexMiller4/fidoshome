@@ -52,7 +52,7 @@ class Form extends Component {
         <input onChange={(e) => this.handleChange(e)} id='state-input' className='form-input' type='text' name='state' placeHolder='CO'></input>
         <label for='zipcode-input' className='label'>Zipcode</label>
         <input onChange={(e) => this.handleChange(e)} id='zipcode-input' className='form-input' type='text' name='zipcode' placeHolder='80042'></input>
-        <button onClick={this.onSubmit}type='button' className='form-btn'>Find Shelters</button>
+        <button onClick={this.onSubmit}type='button' className='form-btn'>Find Pets</button>
       </form>
     );
   }
