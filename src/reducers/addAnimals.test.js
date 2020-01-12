@@ -1,5 +1,3 @@
-import React from 'react';
-import {shallow} from 'enzyme';
 import addAnimals from './addAnimals';
 import VeryGoodBoy from '../images/verygoodboy.PNG';
 
