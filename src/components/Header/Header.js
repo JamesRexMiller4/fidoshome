@@ -1,13 +1,12 @@
 import React from 'react';
 import './Header.scss';
-import RegalPuppy from '../../images/regalpuppy.jpg';
+import PawLogo from '../../images/favicon-32x32.png';
 
 const Header = () => {
   return (
-    <header>
-      <h1 className='header-h1'>Fido's</h1>
-      <img src={RegalPuppy} alt='dog' className='header-profile'/>
-      <h1 className='header-h1'>Home</h1>
+    <header className='header-wrapper'>
+      <h2 className='home-h2'>Fido's Home</h2>
+      <img src={PawLogo} alt='paw print' className='paw-logo' />
     </header>
   );
 }
