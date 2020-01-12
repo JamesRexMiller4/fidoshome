@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './PetPage.scss';
-import PawLogo from '../../images/favicon-32x32.png';
 import Header from '../../components/Header/Header';
 import { connect } from 'react-redux';
 
@@ -13,25 +12,24 @@ class PetPage extends Component {
     console.log(foundPet)
     return ( 
       <section>
-        {/* <Header /> */}
-        <div className='header-wrapper'>
-          <h2 className='home-h2'>Fido's Home</h2>
-          <img src={PawLogo} alt='paw print' className='paw-logo' />
-        </div>
-        <section>
+        <Header />
+        <section className='pet-page-section'>
         <img src={foundPet.photos[0].medium} alt='pet-profile' className='pet-profile-pic' />
         <h2 className='pet-name-h2'>{foundPet.name}</h2>
-        <h3 className='pet-description-h3'>{foundPet.description}</h3>
-        <ul className='ul-attributes'>Attributes:
-          <li className='li-attribute'>Breed: {foundPet.breeds.primary}</li>
-          <li className='li-attribute'>Color: {foundPet.colors.primary}</li>
-          <li className='li-attribute'>Gender: {foundPet.gender}</li>
+        <section className='details-attributes-section'>
+        <ul className='ul'>
+          <p className='ul-p'>Attributes:</p>
+          <li className='li'>Breed: <span className='span-pet-page'>{foundPet.breeds.primary}</span></li>
+          <li className='li'>Color: <span className='span-pet-page'>{foundPet.colors.primary}</span></li>
+          <li className='li'>Gender: <span className='span-pet-page'>{foundPet.gender}</span></li>
         </ul>
-        <ul className='ul-other-details'>Other Details:
-          <li className='li-attribute'>Spayed/Neutered: {foundPet.attributes.spayed_neutered}</li>
-          <li className='li-attribute'>House Trained: {foundPet.attributes.spayed_neutered}</li>
-          <li className='li-attribute'>Up-to-Date on Shots: {foundPet.attributes.shots_current}</li>
+        <ul className='ul'>
+          <p className='ul-p'>Other Details:</p>
+          <li className='li'>Spayed/Neutered: <span className='span-pet-page'>{`${foundPet.attributes.spayed_neutered}`}</span></li>
+          <li className='li'>House Trained: <span className='span-pet-page'>{`${foundPet.attributes.spayed_neutered}`}</span></li>
+          <li className='li'>Up-to-Date on Shots: <span className='span-pet-page'>{`${foundPet.attributes.shots_current}`}</span></li>
         </ul>
+        </section>
         </section>
       </section>
     );
