@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Home.scss';
-import PawLogo from '../../images/favicon-32x32.png';
+import Header from '../Header/Header';
 import Form from '../Form/Form';
 import Results from '../../containers/Results/Results';
 
@@ -25,10 +25,7 @@ class Home extends Component {
   render() { 
     return ( 
       <section className='home-section'>
-        <div className='header-wrapper'>
-          <h2 className='home-h2'>Fido's Home</h2>
-          <img src={PawLogo} alt='paw print' className='paw-logo' />
-        </div>
+        <Header />
         <section className='form-results-section'>
           <Form />
           <Results />
