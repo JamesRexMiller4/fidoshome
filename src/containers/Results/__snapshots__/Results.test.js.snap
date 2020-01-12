@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results Container should match the snapshot with data passed through 1`] = `
+<section
+  className="results-section"
+>
+  <Card
+    address="Venice"
+    age="Older than time itself"
+    id={4}
+    img="verygoodboy.PNG"
+    key="1"
+    name="Fido"
+  />
+  <button
+    className="results-btn"
+    key="42"
+    type="button"
+  >
+    More Results
+    <span
+      aria-label="dog-emoji"
+      role="img"
+    >
+      🐶
+    </span>
+  </button>
+</section>
+`;
+
+exports[`Results Container should match the snapshot with no data passed through 1`] = `
+<section
+  className="results-section"
+/>
+`;
+
+exports[`Results Container should render a "no photo available" picture if the data does not have a photo 1`] = `
+<section
+  className="results-section"
+>
+  <Card
+    address="Venice"
+    age="Older than time itself"
+    id={4}
+    img="No_picture_available.png"
+    key="1"
+    name="Fido"
+  />
+  <button
+    className="results-btn"
+    key="42"
+    type="button"
+  >
+    More Results
+    <span
+      aria-label="dog-emoji"
+      role="img"
+    >
+      🐶
+    </span>
+  </button>
+</section>
+`;
