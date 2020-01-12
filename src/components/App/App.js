@@ -10,8 +10,8 @@ const App = () => {
     <main className="App">
       <Switch>
         <Route exact path='/' component={Landing} />
-        <Route path='/home' component={Home} />
-        <Route path='/:id' render={({ match }) => {
+        <Route exact path='/home' component={Home} />
+        <Route path='/home/:id' render={({ match }) => {
           const { id } = match.params;
           return <PetPage id={id} />
         }} />

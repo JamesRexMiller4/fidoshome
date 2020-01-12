@@ -5,17 +5,30 @@ import { connect } from 'react-redux';
 
 
 class PetPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
-  render() { 
+  render() {
+    const { animals, id } = this.props
+    const foundPet = animals.find(animal => animal.id === parseInt(id))
+    console.log(foundPet)
     return ( 
       <section>
-        <h2>Welcome to the Pet Page</h2>
+        <img src={foundPet.photos[0].large} alt='pet-profile' className='pet-profile-pic' />
+        <h2>{foundPet.name}</h2>
+        <h3>{foundPet.description}</h3>
+        <ul>Attributes:
+          <li>Breed: {foundPet.breeds.primary}</li>
+          <li>Color: {foundPet.colors.primary}</li>
+          <li>Gender: {foundPet.gender}</li>
+        </ul>
+        <ul>Other Details:
+          <li>Spayed/Neutered: {foundPet.attributes.spayed_neutered}</li>
+          <li>House Trained: {foundPet.attributes.spayed_neutered}</li>
+          <li>Up-to-Date on Shots: {foundPet.attributes.shots_current}</li>
+        </ul>
       </section>
     );
   }
 }
- 
-export default PetPage;
+const mapStateToProps = state => ({
+  animals: state.animals
+})
+export default connect(mapStateToProps)(PetPage);
