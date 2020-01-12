@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './PetPage.scss';
 import Header from '../../components/Header/Header';
 import { connect } from 'react-redux';
 
-
-
-class PetPage extends Component {
-  render() {
-    const { animals, id } = this.props
-    const foundPet = animals.find(animal => animal.id === parseInt(id))
-    console.log(foundPet)
+const PetPage = ({ animals, id }) =>  {
+  const foundPet = animals.find(animal => animal.id === parseInt(id))
     return ( 
       <section>
         <Header />
@@ -39,8 +34,8 @@ class PetPage extends Component {
         </section>
       </section>
     );
-  }
 }
+
 const mapStateToProps = state => ({
   animals: state.animals
 })
