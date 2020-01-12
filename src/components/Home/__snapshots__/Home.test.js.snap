@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component should match the snapshot 1`] = `
+<section
+  className="home-section"
+>
+  <Header />
+  <section
+    className="form-results-section"
+  >
+    <Connect(Form) />
+    <Connect(Results) />
+  </section>
+</section>
+`;
