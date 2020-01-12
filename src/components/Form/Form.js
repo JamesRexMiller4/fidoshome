@@ -23,19 +23,15 @@ class Form extends Component {
     let zip = this.state.zipcode;
     let location = 'location=';
 
-    if (state.length > zip.length) {
-      location = location + state
-    } else if (zip.length > state.length) {
-      location = location + zip
-    } else {
-      location = ''
-    }
+    state.length > zip.length ? location = location + state
+    : zip.length > state.length ? location = location + zip
+    : location = ''
 
     fetch('https://api.petfinder.com/v2/animals?' + location + '&status=adoptable' + '&type=' + type, {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
         'Content-Type': 'application/json',
-        mode: 'no-cors'
+        'Origin': 'localhost:3000/home'
       }
     })
     .then(res => res.json())
