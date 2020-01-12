@@ -9,8 +9,7 @@ class Form extends Component {
     this.state = { 
       type: 'dog',
       state: '',
-      zipcode: null,
-      miles: null
+      zipcode: '',
     }
   }
   
@@ -19,12 +18,20 @@ class Form extends Component {
   }
 
   onSubmit = () => {
-    let type = this.state.type
-    let state = this.state.state
-    let miles = this.state.miles
+    let type = this.state.type;
+    let state = this.state.state;
+    let zip = this.state.zipcode;
+    let location = 'location=';
 
-    fetch('https://api.petfinder.com/v2/animals?' + 'location=' + state + '&status=adoptable' + '&type=' 
-    + type + '&distance=' + miles, {
+    if (state.length > zip.length) {
+      location = location + state
+    } else if (zip.length > state.length) {
+      location = location + zip
+    } else {
+      location = ''
+    }
+
+    fetch('https://api.petfinder.com/v2/animals?' + location + '&status=adoptable' + '&type=' + type, {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
         'Content-Type': 'application/json',
@@ -49,8 +56,6 @@ class Form extends Component {
         <input onChange={(e) => this.handleChange(e)} id='state-input' className='form-input' type='text' name='state' placeHolder='CO'></input>
         <label for='zipcode-input' className='label'>Zipcode</label>
         <input onChange={(e) => this.handleChange(e)} id='zipcode-input' className='form-input' type='text' name='zipcode' placeHolder='80042'></input>
-        <label for='miles-input' className='label'>Miles</label>
-        <input onChange={(e) => this.handleChange(e)} id='miles-input' className='form-input' type='number' name='miles' step='5'></input>
         <button onClick={this.onSubmit}type='button' className='form-btn'>Find Shelters</button>
       </form>
     );
