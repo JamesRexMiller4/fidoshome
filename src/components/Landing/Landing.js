@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Landing = () => {
   return ( 
     <main>
-      <header>
+      <header className='header-landing'>
         <h1 className='header-h1'>Fido's</h1>
         <img src={RegalPuppy} alt='dog' className='header-profile'/>
         <h1 className='header-h1'>Home</h1>
