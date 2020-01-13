@@ -2,6 +2,7 @@ import React from 'react';
 import './PetPage.scss';
 import Header from '../../components/Header/Header';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export const PetPage = ({ animals, id }) =>  {
   const foundPet = animals.find(animal => animal.id === parseInt(id))
@@ -41,3 +42,8 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(PetPage);
+
+PetPage.propTypes = {
+  animals: PropTypes.array,
+  id: PropTypes.string
+}

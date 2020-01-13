@@ -4,6 +4,7 @@ import Card from '../../components/Card/Card';
 import { connect } from 'react-redux';
 import { addAnimals } from '../../actions/index';
 import NoPhoto from '../../images/No_picture_available.png';
+import PropTypes from 'prop-types';
 
 export const Results = ({ animals }) => {
   let cards, photos;
@@ -46,3 +47,7 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Results);
+
+Results.propTypes = {
+  animals: PropTypes.array
+}
