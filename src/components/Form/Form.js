@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Form.scss';
 import { addAnimals } from '../../actions';
 import { connect } from 'react-redux';
-
-class Form extends Component {
+import { fetchAnimals } from '../../apiCalls/apiCalls';
+export class Form extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -18,7 +18,7 @@ class Form extends Component {
     this.setState({[e.target.name]: e.target.value.toLowerCase()})
   }
 
-  onSubmit = () => {
+  onSearch = () => {
     let type = this.state.type;
     let state = this.state.state;
     let zip = this.state.zipcode;
@@ -29,15 +29,11 @@ class Form extends Component {
     : zip.length > state.length ? location = location + zip
     : location = ''
 
-    fetch('https://api.petfinder.com/v2/animals?' + location + '&status=adoptable&type=' + type + '&page=' + page, {
-      headers: {
-        'Authorization': 'Bearer ' + sessionStorage.getItem('token'),
-        'Content-Type': 'application/json',
-        'Origin': 'localhost:3000/home'
-      }
+    fetchAnimals(type, location, page)
+    .then(data => {
+      console.log(data)
+      {this.props.addAnimals(data.animals)}
     })
-    .then(res => res.json())
-    .then(data => {this.props.addAnimals(data.animals)})
   }
 
   render() { 
@@ -54,7 +50,7 @@ class Form extends Component {
         <input onChange={(e) => this.handleChange(e)} id='state-input' className='form-input' type='text' name='state' placeHolder='CO'></input>
         <label for='zipcode-input' className='label'>Zipcode</label>
         <input onChange={(e) => this.handleChange(e)} id='zipcode-input' className='form-input' type='text' name='zipcode' placeHolder='80042'></input>
-        <button onClick={this.onSubmit}type='button' className='form-btn'>Find Pets</button>
+        <button onClick={this.onSearch} type='button' className='form-btn'>Find Pets</button>
       </form>
     );
   }
