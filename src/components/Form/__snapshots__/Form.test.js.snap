@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should match the snapshot 1`] = `
+<form
+  className="form"
+>
+  <h2
+    className="form-h2"
+  >
+    Search
+  </h2>
+  <label
+    className="label"
+    for="type-input"
+  >
+    Type
+  </label>
+  <select
+    className="form-input"
+    id="type-input"
+    name="type"
+    onChange={[Function]}
+    placeHolder="Dog"
+    type="text"
+  >
+    <option
+      name="type"
+    >
+      Dog
+    </option>
+    <option
+      name="type"
+    >
+      Cat
+    </option>
+    <option
+      name="type"
+    >
+      Rabbit
+    </option>
+  </select>
+  <label
+    className="label"
+    for="state-input"
+  >
+    State
+  </label>
+  <input
+    className="form-input"
+    id="state-input"
+    name="state"
+    onChange={[Function]}
+    placeHolder="CO"
+    type="text"
+  />
+  <label
+    className="label"
+    for="zipcode-input"
+  >
+    Zipcode
+  </label>
+  <input
+    className="form-input"
+    id="zipcode-input"
+    name="zipcode"
+    onChange={[Function]}
+    placeHolder="80042"
+    type="text"
+  />
+  <button
+    className="form-btn"
+    onClick={[Function]}
+    type="button"
+  >
+    Find Pets
+  </button>
+</form>
+`;

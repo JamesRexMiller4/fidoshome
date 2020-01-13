@@ -1,16 +1,15 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import Home from './Home';
+import Card from './Card';
 
-describe('Home Component', () => {
-let wrapper;
+describe('Card Component', () => {
+  let wrapper;
 
-beforeEach(() => {
-wrapper = shallow(<Home />)
-})
+  beforeEach(() => {
+    wrapper = shallow(<Card/>)
+  })
 
 it('should match the snapshot', () => {
   expect(wrapper).toMatchSnapshot();
-})
-
+  })
 });

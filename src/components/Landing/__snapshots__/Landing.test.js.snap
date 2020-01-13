@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing Component should match the snapshot 1`] = `
+<main>
+  <header
+    className="header-landing"
+  >
+    <h1
+      className="header-h1"
+    >
+      Fido's
+    </h1>
+    <img
+      alt="dog"
+      className="header-profile"
+      src="regalpuppy.jpg"
+    />
+    <h1
+      className="header-h1"
+    >
+      Home
+    </h1>
+  </header>
+  <section
+    className="welcome-section"
+  >
+    <h2
+      className="landing-welcome-h2"
+      id="welcome-1"
+    >
+      Give your new best friend
+    </h2>
+    <Link
+      to="/home"
+    >
+      <button
+        className="btn"
+        id="enter-btn"
+        type="button"
+      >
+        Enter
+      </button>
+    </Link>
+    <h2
+      className="landing-welcome-h2"
+      id="welcome-2"
+    >
+      the home they always dreamed of
+    </h2>
+  </section>
+</main>
+`;

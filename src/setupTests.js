@@ -3,3 +3,24 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
+
+const sessionStorageMock = {
+  getItem: jest.fn().mockImplementation(key => sessionStorageItems[key]),
+  setItem: jest.fn().mockImplementation((key, value) => {
+      sessionStorageItems[key] = value;
+  }),
+  clear: jest.fn().mockImplementation(() => {
+      sessionStorageItems = {};
+  }),
+  removeItem: jest.fn().mockImplementation((key) => {
+      sessionStorageItems[key] = undefined;
+  }),
+};
+
+let sessionStorageItems = {};
+
+global.sessionStorage = sessionStorageMock
