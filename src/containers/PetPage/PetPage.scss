@@ -44,3 +44,21 @@
   font-size: 1.25rem;
   color: rgb(73, 73, 73);
 }
+
+.back-btn {
+  position: relative;
+  width: 20%;
+  height: 5%;
+  background-color: white;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+  border-color: rgb(92, 10, 186);
+  border-radius: 5px;
+  font-size: 20px;
+  color: purple;
+  &:hover {
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+  }
+}

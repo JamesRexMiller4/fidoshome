@@ -1,6 +1,7 @@
 import React from 'react';
 import './PetPage.scss';
 import Header from '../../components/Header/Header';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -9,6 +10,9 @@ export const PetPage = ({ animals, id }) =>  {
     return ( 
       <section>
         <Header />
+        <Link to='/home'>
+        <button className='back-btn' type='button'>Back To Results</button>
+        </Link>
         <section className='pet-page-section'>
         <img src={foundPet.photos[0].medium} alt='pet-profile' className='pet-profile-pic' />
         <h2 className='pet-name-h2'>{foundPet.name}</h2>
